@@ -11,9 +11,23 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @suggestion.user %>
+  <strong>Location:</strong>
+  <%= @suggestion.location %>
 </p>
+
+<p>
+  <strong>User:</strong>
+  <%= @suggestion.user.try(:email) %>
+</p>
+
+
+
+
 
 <%= link_to 'Edit', edit_suggestion_path(@suggestion) %> |
 <%= link_to 'Back', suggestions_path %>
+
+<h2>Nearby Suggestions</h2>
+  <% @suggestion.nearbys(5).each do |suggestion| %>
+    <%= link_to suggestion.location, suggestion %>
+  <% end %>

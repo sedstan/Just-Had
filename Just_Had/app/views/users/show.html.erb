@@ -1,5 +1,8 @@
-<h1><%= @user.email %></h1>
+<h1><%= @user.username %></h1> 
+<p>
+  <strong>Image:</strong>>
+  <%= image_tag @user.user_image %>
+</p>
+<%= render @user.suggestions %>
 
-<% @user.suggestions.each do |suggestion| %>
-  <%= suggestion.inspect %>
-<% end %>
+

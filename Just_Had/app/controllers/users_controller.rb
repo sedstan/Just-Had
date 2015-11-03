@@ -4,7 +4,15 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def current_user_home
+    redirect_to current_user
+  end
+
   def show
     @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:username, :image)
   end
 end

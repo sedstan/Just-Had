@@ -15,7 +15,7 @@
   <tbody>
     <% @suggestions.each do |suggestion| %>
       <tr>
-        <td><%= suggestion.image %></td>
+        <td><%= image_tag suggestion.food_image.url %></td>
         <td><%= suggestion.description %></td>
         <td><%= suggestion.user %></td>
         <td><%= suggestion.location %></td>

@@ -11,13 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102153448) do
+ActiveRecord::Schema.define(version: 20151103114351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "suggestions", force: :cascade do |t|
-    t.text     "image"
     t.text     "description"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
@@ -27,6 +26,7 @@ ActiveRecord::Schema.define(version: 20151102153448) do
     t.string   "location"
     t.float    "longitude"
     t.float    "latitude"
+    t.string   "food_image"
   end
 
   add_index "suggestions", ["user_id"], name: "index_suggestions_on_user_id", using: :btree

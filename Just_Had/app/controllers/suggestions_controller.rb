@@ -10,6 +10,7 @@ class SuggestionsController < ApplicationController
   # GET /suggestions/1
   # GET /suggestions/1.json
   def show
+    
   end
 
   # GET /suggestions/new
@@ -69,6 +70,6 @@ class SuggestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def suggestion_params
-      params.require(:suggestion).permit(:image, :description, :location, :longitude, :lattitude, :category, :food_type, :user_id)
+      params.require(:suggestion).permit(:food_image, :remote_food_image_url, :description, :location, :longitude, :lattitude, :category, :food_type, :user_id)
     end
 end

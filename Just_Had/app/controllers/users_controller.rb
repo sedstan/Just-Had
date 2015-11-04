@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:recipe).permit(:name, :user_image)
+    params.require(:user).permit(:name, :user_image)
   end
 end
 

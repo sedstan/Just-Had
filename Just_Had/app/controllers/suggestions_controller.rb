@@ -5,14 +5,11 @@ class SuggestionsController < ApplicationController
   # GET /suggestions.json
   def index
     @suggestions = Suggestion.all
-    @q = Suggestion.ransack(params[:q])
-     @suggestion = @q.result(distinct: true)
   end
 
   # GET /suggestions/1
   # GET /suggestions/1.json
   def show
-    
   end
 
   # GET /suggestions/new

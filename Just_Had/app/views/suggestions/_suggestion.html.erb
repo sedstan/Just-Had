@@ -1,13 +1,10 @@
 <li>
   <ul>
-    <li><%= image_tag suggestion.food_image.url %></li>
+    <li><%= link_to image_tag(suggestion.food_image.url), suggestion %></li>
     <li><%= suggestion.description %></li>
     <li><%= suggestion.location %></li>
     <li><%= suggestion.user.try(:username) %></li>
     <li><%= suggestion.food_type %></li>
-    <li><%= suggestion.category %></li>
-    <li><%= link_to 'Show', suggestion %></li>
-    <li><%= link_to 'Edit', edit_suggestion_path(suggestion) %></li>
-    <li><%= link_to 'Destroy', suggestion, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <li><span class="[success alert secondary] [round radius] label"><%= suggestion.category %></span></li>
   </ul>
 </li>

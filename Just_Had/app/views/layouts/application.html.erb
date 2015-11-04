@@ -3,9 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
-
+  <title><%= content_for?(:title) ? yield(:title) : "JustHad" %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "vendor/modernizr" %>
   <%= javascript_include_tag "application" %>
@@ -56,13 +54,16 @@
   </header>
 
   <% flash.each do |name, message| %>
-  <div class="flash-message flash-message-<%= name %>">
-    <%= message %>
-  </div>
+    <div data-alert class="alert-box secondary row flash-message flash-message-<%= name %>">
+      <%= message %>
+      <a href="#" class="close">&times;</a>
+    </div>
   <% end %>
 
   <main class="row">
-    <%= yield %>
+    <div class="large-12 columns">
+      <%= yield %>
+    </div>
   </main>
 </body>
 </html>

@@ -20,11 +20,8 @@
   <%= @suggestion.user.try(:email) %>
 </p>
 
-
-
-
-
 <%= link_to 'Edit', edit_suggestion_path(@suggestion) %> |
+><%= link_to 'Destroy', @suggestion, method: :delete, data: { confirm: 'Are you sure?' } %> | 
 <%= link_to 'Back', suggestions_path %>
 
 <h2>Nearby Suggestions</h2>

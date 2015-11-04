@@ -1,7 +1,54 @@
-header {
-  background: #f8f8f8;
-}
+body {
+  img {
+    border-radius: 5px !important;
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+    border: 5px solid #fff;
+  }
 
-table {
-  width: 100%;
+  input, select, textarea {
+    border-radius: 5px !important;
+    -webkit-border-radius: 5px !important;
+    -moz-border-radius: 5px !important;
+  }
+
+  label {
+    padding: 10px 0;
+    font-weight: bold;
+  }
+
+  ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .flash-message {
+    margin-top: 10px;
+    text-align: center; 
+  }
+
+  header {
+    background: #f8f8f8;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    background: url(image_path("bg.png"));
+    border-bottom: 1px solid #F8F8F8;
+    .top-bar .name h1 a {
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+  }
+
+  table {
+    width: 100%;
+  }
+
+  main {
+    h1 {
+      font-size: 76px;
+      font-weight: bold;
+      line-height: 1.2;
+      letter-spacing: -2px;
+    }
+  }
 }

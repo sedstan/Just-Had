@@ -12,28 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :food_image %><br>
+    <%= f.label :food_image %>
     <%= f.file_field :food_image %>
   </div>
   
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
 
   <div class="field">
-    <%= f.label :location %><br>
+    <%= f.label :location %>
     <%= f.text_area :location %>
   </div>
   <div class="field">
-    <%= f.label :category %><br>
+    <%= f.label :category %>
     <%= f.select :category, ["Breakfast", "Lunch", "Dinner"] %>
   </div>
   <div class="field">
-    <%= f.label :type %><br>
+    <%= f.label :type %>
     <%= f.select :food_type, ["Food", "Drink"] %>
   </div>
   <div class="actions">
-    <%= f.submit class: "button expand" %>
+    <%= f.submit "Suggest", class: "button expand" %>
   </div>
 <% end %>

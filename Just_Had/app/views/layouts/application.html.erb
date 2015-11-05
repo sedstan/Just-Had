@@ -11,24 +11,25 @@
 </head>
 
 <body>
-  <header>
-    <nav class="top-bar row" data-topbar role="navigation">
-      <ul class="title-area">
-        <li class="name">
-          <h1><%= link_to "JustHad", root_path %></h1>
-        </li>
-        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
+  <div class="wrapper">
+    <header>
+      <nav class="top-bar row" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1><%= link_to "JustHad", root_path %></h1>
+          </li>
+          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
 
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-          <li><%= link_to "Users", users_path %></li>
-          <li><%= link_to "Suggestions", suggestions_path %></li>
-          <% if current_user %>
-          <li><%= link_to "New Suggestion", new_suggestion_path %></li>
-          <li></li>
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li><%= link_to "Users", users_path %></li>
+            <li><%= link_to "Suggestions", suggestions_path %></li>
+            <% if current_user %>
+            <li><%= link_to "New Suggestion", new_suggestion_path %></li>
+            <li></li>
             <li class="has-dropdown">
               <a href="#">Account</a>
               <ul class="dropdown">
@@ -36,13 +37,13 @@
                 <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
               </ul>
             </li>
-          <% else %>
+            <% else %>
             <li><%= link_to "Register", new_user_registration_path %></li>
             <li><%= link_to "Login", new_user_session_path %></li>
-          <% end %>
-        </ul>
+            <% end %>
+          </ul>
 
-        <!-- Left Nav Section -->
+          <!-- Left Nav Section -->
         <!-- <ul class="left">
           <li><a href="#">About</a></li>
         </ul> -->
@@ -51,10 +52,10 @@
   </header>
 
   <% flash.each do |name, message| %>
-    <div data-alert class="alert-box secondary row flash-message flash-message-<%= name %>">
-      <%= message %>
-      <a href="#" class="close">&times;</a>
-    </div>
+  <div data-alert class="alert-box secondary row flash-message flash-message-<%= name %>">
+    <%= message %>
+    <a href="#" class="close">&times;</a>
+  </div>
   <% end %>
 
   <main class="row">
@@ -62,11 +63,13 @@
       <%= yield %>
     </div>
   </main>
+  <div class="push"></div>
+</div>
+<div class="footer">
+  <footer class="footer">
+    &copy; Sedky S. Said
+  </footer>
+</div>
 
-  <div class="bottom">
-    <footer class="footer">
-      &copy; Sedky S. Said
-    </footer>
-  </div>
 </body>
 </html>

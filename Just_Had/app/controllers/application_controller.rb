@@ -13,14 +13,14 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-    # my custom fields are :username, :image
+    # my custom fields are :username, :user_image
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) do |u|
-        u.permit(:username, :user_image, :email, :password, :password_confirmation)
+        u.permit(:username, :user_image, :remote_user_image_url, :email, :password, :password_confirmation)
       end
 
       devise_parameter_sanitizer.for(:account_update) do |u|
-        u.permit(:username, :user_image, :email, :password, :password_confirmation, :current_password)
+        u.permit(:username, :user_image, :remote_user_image_url, :email, :password, :password_confirmation, :current_password)
       end
     end
-end
+  end

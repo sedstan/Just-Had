@@ -1,31 +1,21 @@
 class SuggestionsController < ApplicationController
   before_action :set_suggestion, only: [:show, :edit, :update, :destroy]
-  
-
-  # GET /suggestions
-  # GET /suggestions.json
+  # All Users
   def index
     @suggestions = Suggestion.all
   end
 
-  # GET /suggestions/1
-  # GET /suggestions/1.json
   def show
   end
 
-  # GET /suggestions/new
   def new
     @suggestion = Suggestion.new
   end
-
-  # GET /suggestions/1/edit
+# Users can only edit their own suggestions
   def edit
     redirect_to @suggestion unless authenticate_user(@suggestion.user)
   end
   
-
-  # POST /suggestions
-  # POST /suggestions.json
   def create
     params[:suggestion][:user_id] = current_user.id
     @suggestion = Suggestion.new(suggestion_params)
@@ -41,8 +31,6 @@ class SuggestionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /suggestions/1
-  # PATCH/PUT /suggestions/1.json
   def update
     respond_to do |format|
       if @suggestion.update(suggestion_params)
@@ -55,8 +43,6 @@ class SuggestionsController < ApplicationController
     end
   end
 
-  # DELETE /suggestions/1
-  # DELETE /suggestions/1.json
   def destroy
     @suggestion.destroy
     respond_to do |format|
@@ -66,13 +52,13 @@ class SuggestionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  
     def set_suggestion
       @suggestion = Suggestion.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Strong Params
     def suggestion_params
-      params.require(:suggestion).permit(:food_image, :description, :location, :longitude, :lattitude, :category, :food_type, :user_id)
+      params.require(:suggestion).permit(:food_image, :remote_food_image_url, :description, :location, :longitude, :lattitude, :category, :food_type, :user_id)
     end
 end

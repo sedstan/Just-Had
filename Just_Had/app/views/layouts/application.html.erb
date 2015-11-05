@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <%= favicon_link_tag 'favicon(1).ico' %>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= content_for?(:title) ? yield(:title) : "JustHad" %></title>
@@ -42,11 +43,6 @@
             <li><%= link_to "Login", new_user_session_path %></li>
             <% end %>
           </ul>
-
-          <!-- Left Nav Section -->
-        <!-- <ul class="left">
-          <li><a href="#">About</a></li>
-        </ul> -->
       </section>
     </nav>
   </header>

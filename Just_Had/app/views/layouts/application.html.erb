@@ -4,10 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= content_for?(:title) ? yield(:title) : "JustHad" %></title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="animate.min.css">
   <%= javascript_include_tag "vendor/modernizr" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 
 <body>
@@ -32,7 +34,6 @@
             <li class="has-dropdown">
               <a href="#">Account</a>
               <ul class="dropdown">
-                <li><%= link_to "Profile", current_user %></li>
                 <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
                 <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
               </ul>
@@ -41,14 +42,12 @@
             <li><%= link_to "Register", new_user_registration_path %></li>
             <li><%= link_to "Login", new_user_session_path %></li>
           <% end %>
-
-          
         </ul>
 
         <!-- Left Nav Section -->
-        <ul class="left">
+        <!-- <ul class="left">
           <li><a href="#">About</a></li>
-        </ul>
+        </ul> -->
       </section>
     </nav>
   </header>
@@ -65,5 +64,8 @@
       <%= yield %>
     </div>
   </main>
+  <footer class="bottom">
+  &copy; Sedky S. Said
+  </footer>
 </body>
 </html>

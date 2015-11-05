@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+
+gem 'masonry-rails'
 gem 'geocoder'
 gem 'foundation-rails'
 gem 'cancancan', '~> 1.10'

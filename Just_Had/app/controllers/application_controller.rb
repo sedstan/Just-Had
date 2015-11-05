@@ -3,6 +3,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  def authenticate_user(user)
+    if user != current_user
+      flash[:error] = "You are not authorized to do that. Please login."
+      redirect_to root_path
+    else
+      true
+    end
+  end
+
   protected
     # my custom fields are :username, :image
     def configure_permitted_parameters

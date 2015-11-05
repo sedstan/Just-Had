@@ -1,9 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @suggestion.food_image.url %>
-</p>
+  <%= image_tag @suggestion.food_image.url, class: "suggestion-show-image" %>
+
 
 <p>
   <strong>Description:</strong>
@@ -20,11 +18,18 @@
   <%= @suggestion.user.try(:email) %>
 </p>
 
+<% if current_user == @suggestion.user %>
 <%= link_to 'Edit', edit_suggestion_path(@suggestion) %> |
-><%= link_to 'Destroy', @suggestion, method: :delete, data: { confirm: 'Are you sure?' } %> | 
-<%= link_to 'Back', suggestions_path %>
+<%= link_to 'Destroy', @suggestion, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
 
+<div class="nearby-suggestions">
 <h2>Nearby Suggestions</h2>
-  <% @suggestion.nearbys(5).each do |suggestion| %>
+<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
+  <%= render @suggestion.nearbys(5) %>
+</ul>
+
+<!--   <% @suggestion.nearbys(5).each do |suggestion| %>
     <%= link_to suggestion.location, suggestion %>
-  <% end %>
+  <% end %> -->
+</div>

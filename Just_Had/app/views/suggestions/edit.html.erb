@@ -1,5 +1,9 @@
 <h1>Editing Suggestion</h1>
 
+<% if can? :update, @suggestions %>
+  <%= link_to "Edit", edit_suggestions_path(@suggestions) %>
+<% end %>
+
 <%= render 'form' %>
 
 <%= link_to 'Show', @suggestion %> |

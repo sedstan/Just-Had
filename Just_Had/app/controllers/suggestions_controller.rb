@@ -1,5 +1,6 @@
 class SuggestionsController < ApplicationController
   before_action :set_suggestion, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /suggestions
   # GET /suggestions.json
@@ -19,7 +20,9 @@ class SuggestionsController < ApplicationController
 
   # GET /suggestions/1/edit
   def edit
+    redirect_to @suggestion unless authenticate_user(@suggestion.user)
   end
+  
 
   # POST /suggestions
   # POST /suggestions.json

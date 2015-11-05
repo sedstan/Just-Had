@@ -1,4 +1,4 @@
-User.destroy_all
+§User.destroy_all
 
 u1 = User.create!(email: "larry@larry.com", password: "password", username: "larlar")
 u2 = User.create!(email: "mike@mike.com", password: "password", username:"MandM")

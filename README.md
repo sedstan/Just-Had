@@ -5,8 +5,7 @@
 
 ### A Scocial Networking App for Foodies! 
 
-<!--Add a link to the app.-->
-
+[Just Had](https://just-had.herokuapp.com/)
 ####Overview
 Just Had grew out of a desire to know what and where people like to eat. It is a place to connect with other like minded people. 
 	

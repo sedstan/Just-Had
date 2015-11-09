@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'fog'
 gem 'jquery-turbolinks'
 gem 'masonry-rails'
 gem 'geocoder'

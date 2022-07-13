@@ -11,7 +11,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'ransack'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '5.2.8.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets

@@ -1,6 +1,8 @@
 
 # Just Had
 
+## **THIS PROJECT IS NO LONGER LIVE!**
+
 ## WDI-LDN-16 - Project 2
 
 ### A Scocial Networking App for Foodies! 

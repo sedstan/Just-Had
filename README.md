@@ -7,10 +7,10 @@
 
 ### A Scocial Networking App for Foodies! 
 
-####Overview
+#### Overview
 Just Had grew out of a desire to know what and where people like to eat. It is a place to connect with other like minded people. 
 	
-####The Approach/How it works
+#### The Approach/How it works
 When a user visits the site they log in.
 
 ![](./images/login.jpg)
@@ -43,7 +43,7 @@ If a user so choose, their may update or delete their account.
 
 ![](./images/edituser_2.jpg)
 
-####The Build
+#### The Build
 Just Had started with an idea and an ERD. Then I designed a high fidelity mock up.
 
 ![](./images/mockup.jpg)
@@ -53,7 +53,7 @@ The app was built using:
 * Rails 4, Foundation 5, HTML 5, SCSS and jQuery.
 * It features gems that allow for geolocating and image uploading.
 
-####Challenges
+#### Challenges
 I found the biggest challenge was being able to add more features to this version. 
 
 	
